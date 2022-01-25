@@ -1,0 +1,167 @@
+body 
+{
+    direction:ltr;
+    background-color: #e8e8e8;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#gameContainer, #openingPanel, #gamePanel, #restartBtn{
+    display: none;
+}
+
+h1{
+    font-size: 16pt;
+    padding: 10px;
+}
+
+#battleshipBtn{
+    position: absolute;
+    bottom: 80px;
+    right: 40px;
+    border-radius: 100%;
+    width: 100px;
+    padding: 10px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.28);
+    background-color: white;
+    transition: 0.3s;
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+#gameContainer{
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 700px;
+    min-height: 50vh;
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+    z-index: 10;
+    animation: scaleIn 0.75s ease 0s 1 normal forwards;
+}
+
+@media (max-width: 670px)  {
+    #gameContainer {
+        width: 65%;
+        height: 40vh;
+    }
+
+    #gamePanel table {
+        width: 250px!important;
+        height: 250px!important;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+      transform: scale(0);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+#exitBtn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#info{
+    color: red;
+    font-size: 12pt;
+    padding-top: 7px;
+    padding-bottom: 30px;
+}
+
+input#quantity {
+    padding: 5px;
+    border: 1px solid gray;
+    width: 30px;
+    font-size: 13px;
+}
+
+#tableContainer{
+    padding: 20px;
+}
+
+#gamePanel table {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+ #gamePanel table tbody td {
+  border:2px solid #85848c;
+}
+
+.ocean{
+    background-image: url(/images/ocean.png);
+    background-position: center;
+    background-size: contain;
+}
+
+.target{
+    background-image: url(/images/target.png);
+    background-position: center;
+    background-size: contain;
+}
+
+#overlay{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 9;
+    display: none;
+}
+
+#startGameBtn, #restartBtn{ 
+    width: 120px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#startGameBtn{ 
+    display: inline;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;  
+    background-color: white;
+    text-align: center;
+    color: gray;
+    font-size: 10pt;
+}
+
+.green{
+    color: green!important;
+}
